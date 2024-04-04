@@ -1,5 +1,10 @@
 # Java-Algorithms
 Sonarcloud: https://sonarcloud.io/project/overview?id=ahahaharu_Java-Algorithms
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=ahahaharu_Java-Algorithms&metric=bugs)](https://sonarcloud.io/summary/new_code?id=ahahaharu_Java-Algorithms)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=ahahaharu_Java-Algorithms&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=ahahaharu_Java-Algorithms)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ahahaharu_Java-Algorithms&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=ahahaharu_Java-Algorithms)
+
 # Задания
 1.3 Контейнеры, очереди, стеки
   1) Задание 1.3.12 Tasks/1.3/Task_12 (PLAN: 0.25 FACT: 0.16)
