@@ -5,6 +5,12 @@
 .vscode/
 *.code-workspace
 
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
 # Maven
 target/
 pom.xml.tag
