@@ -1,3 +1,5 @@
+package org.example;
+
 public class StackQueue<T> {
     private Node<T> first, last;
 
