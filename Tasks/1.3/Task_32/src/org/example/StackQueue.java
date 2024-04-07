@@ -1,5 +1,8 @@
+package org.example;
+
 public class StackQueue<T> {
-    private Node<T> first, last;
+    private Node<T> first;
+    private Node<T> last;
 
     public boolean isEmpty() {
         return first == null;
