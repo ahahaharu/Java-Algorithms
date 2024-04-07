@@ -27,7 +27,7 @@ public class Main {
         if (queue.size() < k) {
             logger.info("Количество строк меньше, чем k");
         } else {
-            logger.info(queue.peekFirst());
+            logger.info(String.format(queue.peekFirst()));
         }
     }
 }
