@@ -16,7 +16,6 @@ public class Main {
 
         logger.info("Введите k:");
         int k = scanner.nextInt();
-        scanner.nextLine();
 
         logger.info("Введите элементы очереди (ctrl + D, чтобы закончить):");
         while (scanner.hasNextLine()) {
