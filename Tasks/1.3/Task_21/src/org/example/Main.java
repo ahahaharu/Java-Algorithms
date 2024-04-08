@@ -1,13 +1,13 @@
+package org.example;
+
 import java.util.Scanner;
 
 public class Main {
-    public static void main() {
-        Logger logger = Logger.getLogger(Main.class.getName());
-
+    public static void main(String[] args) {
         LinkedList list = new LinkedList();
         Scanner scanner = new Scanner(System.in);
 
-        logger.info("Введите элементы списка (через пробел):");
+        System.out.println("Введите элементы списка (через пробел):");
         String[] strings = scanner.nextLine().split(" ");
 
         for (String string : strings) {
@@ -23,14 +23,14 @@ public class Main {
             }
         }
 
-        logger.info("Введите key:");
+        System.out.println("Введите key:");
         String key = scanner.nextLine();
 
         boolean isExist = list.find(key);
         if (isExist) {
-            logger.info("'" + key + "' есть в списке");
+            System.out.println("'" + key + "' есть в списке");
         } else {
-            logger.info("'" + key + "' нет в списке");
+            System.out.println("'" + key + "' нет в списке");
         }
     }
 }

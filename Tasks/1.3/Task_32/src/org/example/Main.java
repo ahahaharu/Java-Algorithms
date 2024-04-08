@@ -1,11 +1,7 @@
 package org.example;
 
-import java.util.logging.Logger;
-
 public class Main {
-    private static final Logger logger = Logger.getLogger(Main.class.getName());
     public static void main(String[] args) {
-
         StackQueue<Integer> stackQueue = new StackQueue<>();
 
         stackQueue.push(1);
@@ -14,9 +10,9 @@ public class Main {
 
         stackQueue.enqueue(4);
 
-        logger.info(stackQueue.pop().toString());
-        logger.info(stackQueue.pop().toString());
-        logger.info(stackQueue.pop().toString());
-        logger.info(stackQueue.pop().toString());
+        System.out.println(stackQueue.pop());
+        System.out.println(stackQueue.pop());
+        System.out.println(stackQueue.pop());
+        System.out.println(stackQueue.pop());
     }
 }
