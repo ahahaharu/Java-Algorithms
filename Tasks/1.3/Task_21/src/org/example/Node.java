@@ -1,8 +1,8 @@
 package org.example;
 
-public class Node<String> {
+public class Node<S> {
     String value;
-    Node next;
+    Node<S> next;
 
     Node(String value) {
         this.value = value;
