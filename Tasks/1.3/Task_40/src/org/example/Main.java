@@ -9,8 +9,8 @@ public class Main {
 
         System.out.println("Введите символы для списка (ctrl + D, чтобы закончить):");
         while (scanner.hasNext()) {
-            char ch = scanner.next().charAt(0);
-            mtf.processCharacter(ch);
+            char symbol = scanner.next().charAt(0);
+            mtf.processCharacter(symbol);
         }
         System.out.println("Список:");
         mtf.printList();
