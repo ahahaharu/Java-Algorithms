@@ -1,9 +1,9 @@
 package org.example;
 public class LinkedList {
-    Node head;
+    Node<String> head;
 
     public boolean find(String key) {
-        Node current = head;
+        Node<String> current = head;
         while (current != null) {
             if (current.value.equals(key)) {
                 return true;

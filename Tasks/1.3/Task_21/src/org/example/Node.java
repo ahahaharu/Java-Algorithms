@@ -1,6 +1,6 @@
 package org.example;
 
-public class Node {
+public class Node<String> {
     String value;
     Node next;
 

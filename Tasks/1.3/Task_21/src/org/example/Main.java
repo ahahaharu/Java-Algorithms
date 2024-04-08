@@ -11,11 +11,11 @@ public class Main {
         String[] strings = scanner.nextLine().split(" ");
 
         for (String string : strings) {
-            Node node = new Node(string);
+            Node<String> node = new Node<>(string);
             if (list.head == null) {
                 list.head = node;
             } else {
-                Node last = list.head;
+                Node<String> last = list.head;
                 while (last.next != null) {
                     last = last.next;
                 }
