@@ -33,4 +33,13 @@ public class StackQueue<T> {
     public void enqueue(T item) {
         push(item);
     }
+
+    public void print() {
+        Node<T> current = first;
+        while (current != null) {
+            System.out.println(current.item);
+            current = current.next;
+        }
+    }
+
 }
