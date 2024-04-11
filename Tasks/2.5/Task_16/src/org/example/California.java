@@ -27,7 +27,7 @@ public class California {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<String> names = new ArrayList<String>();
+        ArrayList<String> names = new ArrayList<>();
 
         System.out.println("Введите имена кандидатов (ctrl + D, чтобы закончить):");
         while (scanner.hasNextLine()) {
