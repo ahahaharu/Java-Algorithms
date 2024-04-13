@@ -10,6 +10,7 @@ public class Vector implements Comparable<Vector> {
         this.components = components;
     }
 
+    @Override
     public int compareTo(Vector other) {
         int n = Math.min(this.components.length, other.components.length);
         for (int i = 0; i < n; i++) {

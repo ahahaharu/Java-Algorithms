@@ -19,13 +19,14 @@ public class Domain implements Comparable<Domain> {
                 quantity == 0) {
             return "";
         }
-        String result = fields[0];
+        StringBuilder result = new StringBuilder(fields[0]);
         for(int i = 1; i < quantity; i++) {
-            result = fields[i] + "." + result;
+            result.insert(0, fields[i] + ".");
         }
-        return result;
+        return result.toString();
     }
 
+    @Override
     public int compareTo(Domain that) {
         int len = Math.min(this.quantity, that.quantity);
         for (int i = 0; i < len; i++) {
