@@ -27,6 +27,19 @@ public class Domain implements Comparable<Domain> {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Domain that = (Domain) obj;
+        return compareTo(that) == 0;
+    }
+
+
+    @Override
     public int compareTo(Domain that) {
         int len = Math.min(this.quantity, that.quantity);
         for (int i = 0; i < len; i++) {
