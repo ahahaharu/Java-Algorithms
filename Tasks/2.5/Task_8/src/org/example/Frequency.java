@@ -1,6 +1,11 @@
 package org.example;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Scanner;
+
+
 public class Frequency {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
