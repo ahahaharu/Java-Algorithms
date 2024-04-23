@@ -6,8 +6,9 @@ public class BalancedBinaryTree {
     static Node root;
 
     public class Node {
-        int key;
-        Node left, right;
+        private int key;
+        private Node left;
+        private Node right;
 
         Node(int item) {
             key = item;

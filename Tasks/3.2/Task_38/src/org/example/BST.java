@@ -7,9 +7,11 @@ public class BST<Key extends Comparable<Key>> {
 
     private class Node {
         private Key key;
-        private Node left, right;
+        private Node left;
+        private Node right;
         private int N;
-        int x, y;
+        int x;
+        int y;
 
         public Node(Key key, int N) {
             this.key = key;

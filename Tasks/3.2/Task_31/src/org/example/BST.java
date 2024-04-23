@@ -7,8 +7,9 @@ public class BST {
     Set<Integer> set = new HashSet<>();
 
     public class Node {
-        int key;
-        Node left, right;
+        private int key;
+        private Node left;
+        private Node right;
 
         Node(int item) {
             key = item;
