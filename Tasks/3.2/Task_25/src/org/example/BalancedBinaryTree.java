@@ -15,7 +15,7 @@ public class BalancedBinaryTree {
         }
     }
 
-    Node sortedArrayToBST(int arr[], int start, int end) {
+    Node sortedArrayToBST(int[] arr, int start, int end) {
         if (start > end) {
             return null;
         }
