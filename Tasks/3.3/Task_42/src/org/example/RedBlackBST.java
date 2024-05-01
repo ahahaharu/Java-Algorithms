@@ -1,3 +1,5 @@
+package org.example;
+
 public class RedBlackBST<Key extends Comparable<Key>, Value> {
     private Node root;
 
@@ -118,47 +120,22 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return h;
     }
 
-    private Node moveRedLeft(Node h) {
-        flipColors(h);
-        if (isRed(h.right.left)) {
-            h.right = rotateRight(h.right);
-            h = rotateLeft(h);
-        }
-        return h;
+    public int countRedNodes() {
+        return countRedNodes(root);
     }
 
-    public void deleteMin() {
-        if (!isRed(root.left) && !isRed(root.right)) {
-            root.color = RED;
-        }
-        root = deleteMin(root);
-        if (!isEmpty()) {
-            root.color = BLACK;
-        }
-    }
-
-    private Node deleteMin(Node h) {
-        if (h.left == null) {
-            return null;
-        }
-        if (!isRed(h.left) && !isRed(h.left.left)) {
-            h = moveRedLeft(h);
-        }
-        h.left = deleteMin(h.left);
-        return balance(h);
-    }
-
-    // вывод элементов
-    public void inOrderTraversal() {
-        inOrderTraversal(root);
-    }
-
-    private void inOrderTraversal(Node x) {
+    private int countRedNodes(Node x) {
         if (x == null) {
-            return;
+            return 0;
         }
-        inOrderTraversal(x.left);
-        System.out.println("Key: " + x.key + ", Value: " + x.value);
-        inOrderTraversal(x.right);
+        int count = isRed(x) ? 1 : 0;
+        return count + countRedNodes(x.left) + countRedNodes(x.right);
+    }
+
+    public double redNodesPercentage() {
+        if (isEmpty()) {
+            return 0.0;
+        }
+        return (double) countRedNodes() / size() * 100.0;
     }
 }

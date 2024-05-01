@@ -1,3 +1,5 @@
+package org.example;
+
 public class RedBlackBST<Key extends Comparable<Key>, Value> {
     private Node root;
 
@@ -118,16 +120,47 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return h;
     }
 
-    public void draw() {
-        draw(root, "", true);
+    private Node moveRedLeft(Node h) {
+        flipColors(h);
+        if (isRed(h.right.left)) {
+            h.right = rotateRight(h.right);
+            h = rotateLeft(h);
+        }
+        return h;
     }
 
-    private void draw(Node node, String prefix, boolean isTail) {
-        if (node != null) {
-            System.out.println(prefix + (isTail ? "└── " : "├── ") + "(" + node.key + "," + (node.color == RED ? "RED" : "BLACK") + ")");
-            draw(node.right, prefix + (isTail ? "    " : "│   "), false);
-            draw(node.left, prefix + (isTail ? "    " : "│   "), true);
+    public void deleteMin() {
+        if (!isRed(root.left) && !isRed(root.right)) {
+            root.color = RED;
+        }
+        root = deleteMin(root);
+        if (!isEmpty()) {
+            root.color = BLACK;
         }
     }
 
+    private Node deleteMin(Node h) {
+        if (h.left == null) {
+            return null;
+        }
+        if (!isRed(h.left) && !isRed(h.left.left)) {
+            h = moveRedLeft(h);
+        }
+        h.left = deleteMin(h.left);
+        return balance(h);
+    }
+
+    // вывод элементов
+    public void inOrderTraversal() {
+        inOrderTraversal(root);
+    }
+
+    private void inOrderTraversal(Node x) {
+        if (x == null) {
+            return;
+        }
+        inOrderTraversal(x.left);
+        System.out.println("Key: " + x.key + ", Value: " + x.value);
+        inOrderTraversal(x.right);
+    }
 }

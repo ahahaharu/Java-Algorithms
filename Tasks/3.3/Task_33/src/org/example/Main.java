@@ -1,3 +1,5 @@
+package org.example;
+
 import java.util.Scanner;
 
 public class Main {
@@ -15,7 +17,6 @@ public class Main {
                 bst.put(key, key);
             } catch (NumberFormatException e) {
                 System.out.println("Некорректный ввод. Пожалуйста, введите число.");
-                continue;
             }
 
         }

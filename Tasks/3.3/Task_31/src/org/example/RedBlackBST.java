@@ -1,3 +1,5 @@
+package org.example;
+
 public class RedBlackBST<Key extends Comparable<Key>, Value> {
     private Node root;
 
@@ -104,36 +106,16 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return h;
     }
 
-    private Node balance(Node h) {
-        if (isRed(h.right) && !isRed(h.left)) {
-            h = rotateLeft(h);
-        }
-        if (isRed(h.left) && isRed(h.left.left)) {
-            h = rotateRight(h);
-        }
-        if (isRed(h.left) && isRed(h.right)) {
-            flipColors(h);
-        }
-        h.n = size(h.left) + size(h.right) + 1;
-        return h;
+    public void draw() {
+        draw(root, "", true);
     }
 
-    public int countRedNodes() {
-        return countRedNodes(root);
+    private void draw(Node node, String prefix, boolean isTail) {
+        if (node != null) {
+            System.out.println(prefix + (isTail ? "└── " : "├── ") + "(" + node.key + "," + (node.color == RED ? "RED" : "BLACK") + ")");
+            draw(node.right, prefix + (isTail ? "    " : "│   "), false);
+            draw(node.left, prefix + (isTail ? "    " : "│   "), true);
+        }
     }
 
-    private int countRedNodes(Node x) {
-        if (x == null) {
-            return 0;
-        }
-        int count = isRed(x) ? 1 : 0;
-        return count + countRedNodes(x.left) + countRedNodes(x.right);
-    }
-
-    public double redNodesPercentage() {
-        if (isEmpty()) {
-            return 0.0;
-        }
-        return (double) countRedNodes() / size() * 100.0;
-    }
 }
