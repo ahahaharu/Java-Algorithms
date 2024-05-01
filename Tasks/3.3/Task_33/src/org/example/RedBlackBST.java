@@ -105,20 +105,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         h.n = size(h.left) + size(h.right) + 1;
         return h;
     }
-
-    private Node balance(Node h) {
-        if (isRed(h.right) && !isRed(h.left)) {
-            h = rotateLeft(h);
-        }
-        if (isRed(h.left) && isRed(h.left.left)) {
-            h = rotateRight(h);
-        }
-        if (isRed(h.left) && isRed(h.right)) {
-            flipColors(h);
-        }
-        h.n = size(h.left) + size(h.right) + 1;
-        return h;
-    }
+    
 
     // Проверка, что ни у одного узла нет двух красных ссылок и нет правых красных ссылок
     public boolean is23() {
