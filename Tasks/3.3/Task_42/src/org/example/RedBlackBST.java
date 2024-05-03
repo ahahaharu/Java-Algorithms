@@ -106,7 +106,6 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return h;
     }
 
-
     public int countRedNodes() {
         return countRedNodes(root);
     }

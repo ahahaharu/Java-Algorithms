@@ -105,7 +105,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         h.n = size(h.left) + size(h.right) + 1;
         return h;
     }
-    
+
 
     // Проверка, что ни у одного узла нет двух красных ссылок и нет правых красных ссылок
     public boolean is23() {
