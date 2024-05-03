@@ -27,5 +27,13 @@ public class Main {
 
         System.out.println("Элементы дерева после удаления минимального элемента:");
         bst.inOrderTraversal();
+
+        System.out.println("Элементы дерева перед удалением максимального элемента:");
+        bst.inOrderTraversal();
+
+        bst.deleteMax();
+
+        System.out.println("Элементы дерева после удаления максимального элемента:");
+        bst.inOrderTraversal();
     }
 }
