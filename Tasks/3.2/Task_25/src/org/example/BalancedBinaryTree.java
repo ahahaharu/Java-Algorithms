@@ -18,6 +18,7 @@ public class BalancedBinaryTree {
 
     Node sortedArrayToBST(int[] arr, int start, int end) {
         if (start > end) {
+            System.out.println("Неверный диапазон. Пожалуйста, введите корректные значения.");
             return null;
         }
 
@@ -47,7 +48,9 @@ public class BalancedBinaryTree {
             keys.add(scanner.nextInt());
         }
 
-        int[] arr = keys.stream().mapToInt(i -> i).toArray(); // преобразование List в int[]
+        int[] arr = keys.stream()
+                        .mapToInt(i -> i)
+                        .toArray(); // преобразование List в int[]
 
         Arrays.sort(arr);
         root = tree.sortedArrayToBST(arr, 0, arr.length - 1);
