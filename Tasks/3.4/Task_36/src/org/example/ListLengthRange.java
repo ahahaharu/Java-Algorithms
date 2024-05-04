@@ -1,8 +1,8 @@
 package org.example;
 
+import java.security.SecureRandom;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 
 public class ListLengthRange {
     private int N;
@@ -19,7 +19,7 @@ public class ListLengthRange {
 
     // Метод для вставки ключей в хеш-таблицу
     public void insertKeys() {
-        Random rand = new Random();
+        SecureRandom rand = new SecureRandom()
         for (int i = 0; i < N; i++) {
             int key = rand.nextInt();
             // Вычисление хеша для ключа
