@@ -1,3 +1,5 @@
+package org.example;
+
 public class LSDSortVariableLength {
     public void lsdSort(String[] array) {
 
