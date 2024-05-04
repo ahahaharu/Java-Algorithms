@@ -7,37 +7,30 @@ public class LSDSortVariableLength {
             return;
         }
 
-        int alphabetSize = 256; // Extended ASCII characters
+        int alphabetSize = 256;
 
         String[] auxArray = new String[array.length];
         int maxStringLength = getMaxStringLength(array);
 
         for (int digit = maxStringLength - 1; digit >= 0; digit--) {
-            // Sort by key-indexed counting on digitTh char
 
-            // Compute frequency counts
             int[] count = new int[alphabetSize + 1];
             for (String s : array) {
                 int digitIndex = charAt(s, digit);
                 count[digitIndex + 1]++;
             }
 
-            // Transform counts to indices
             for (int r = 0; r < alphabetSize; r++) {
                 count[r + 1] += count[r];
             }
-
-            // Distribute
+            
             for (String s : array) {
                 int digitIndex = charAt(s, digit);
                 int indexInAuxArray = count[digitIndex]++;
                 auxArray[indexInAuxArray] = s;
             }
 
-            // Copy back
-            for (int i = 0; i < array.length; i++) {
-                array[i] = auxArray[i];
-            }
+            System.arraycopy(auxArray, 0, array, 0, array.length);
         }
     }
 
@@ -52,7 +45,6 @@ public class LSDSortVariableLength {
         return maxLength;
     }
 
-    // If digit is non-existent, return 0, which is the smallest value possible
     private int charAt(String string, int digit) {
         if (digit < string.length()) {
             return string.charAt(digit);
