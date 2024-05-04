@@ -24,7 +24,7 @@ public class PerfectHashFunction {
                 }
             }
         }
-        return null; // Если идеальная хеш-функция не найдена
+        return new int[0]; // Если идеальная хеш-функция не найдена
     }
 
     private int hashCodeFunction(int a, int k, int m) {

@@ -17,10 +17,8 @@ public class Transaction {
     }
 
     public int hashCode() {
-        int hash;
 
-        if (this.hash != -1) {
-            hash = this.hash;
+        if (hash != -1) {
             System.out.println("Хеш найден в кэше");
         } else {
             hash = 17;
@@ -29,8 +27,6 @@ public class Transaction {
             hash = 31 * hash + ((Double) amount).hashCode();
 
             System.out.println("Хеш не найден в кэше");
-
-            this.hash = hash;
         }
 
         return hash;
