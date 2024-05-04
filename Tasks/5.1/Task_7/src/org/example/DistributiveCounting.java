@@ -7,7 +7,7 @@ public class DistributiveCounting {
     public void keyIndexedCountWithQueue(String[] array, int stringsLength) {
         int alphabetSize = 256; // размер алфавита для таблицы ascii
 
-        Queue<String> count[] = new LinkedList[alphabetSize + 1];
+        Queue<String>[] count = new LinkedList[alphabetSize + 1];
 
         for (int r = 0; r < count.length; r++) {
             count[r] = new LinkedList<>();

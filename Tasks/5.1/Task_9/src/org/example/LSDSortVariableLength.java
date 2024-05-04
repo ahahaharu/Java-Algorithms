@@ -16,9 +16,9 @@ public class LSDSortVariableLength {
             // Sort by key-indexed counting on digitTh char
 
             // Compute frequency counts
-            int count[] = new int[alphabetSize + 1];
-            for (int i = 0; i < array.length; i++) {
-                int digitIndex = charAt(array[i], digit);
+            int[] count = new int[alphabetSize + 1];
+            for (String s : array) {
+                int digitIndex = charAt(s, digit);
                 count[digitIndex + 1]++;
             }
 
@@ -28,10 +28,10 @@ public class LSDSortVariableLength {
             }
 
             // Distribute
-            for (int i = 0; i < array.length; i++) {
-                int digitIndex = charAt(array[i], digit);
+            for (String s : array) {
+                int digitIndex = charAt(s, digit);
                 int indexInAuxArray = count[digitIndex]++;
-                auxArray[indexInAuxArray] = array[i];
+                auxArray[indexInAuxArray] = s;
             }
 
             // Copy back
