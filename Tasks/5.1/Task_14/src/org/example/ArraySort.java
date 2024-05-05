@@ -37,7 +37,6 @@ public class ArraySort {
             }
         }
 
-        // Now arrays[low..lowerThan - 1] < pivot = arrays[lowerThan..greaterThan] < arrays[greaterThan + 1..high]
         threeWayStringQuickSortArrays(arrays, low, lowerThan - 1, valueIndex);
         if (pivot != null) {
             threeWayStringQuickSortArrays(arrays, lowerThan, greaterThan, valueIndex + 1);
