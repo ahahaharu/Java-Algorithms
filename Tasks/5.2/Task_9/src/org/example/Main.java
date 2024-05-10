@@ -9,17 +9,32 @@ public class Main {
 
         System.out.println("Введите количество пар ключ-значение: ");
 
-        int n = scanner.nextInt();
-        scanner.nextLine();
+        int n;
+        while (true) {
+            try {
+                n = Integer.parseInt(scanner.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Пожалуйста, введите целое число.");
+            }
+        }
 
         System.out.println("Введите пары ключ-значение.\n");
         for (int i = 1; i <= n; i++) {
             System.out.println("#"+i);
             System.out.println("Введите ключ:");
             String key = scanner.nextLine();
+
             System.out.println("Введите значение:");
-            int value = scanner.nextInt();
-            scanner.nextLine();
+            int value;
+            while (true) {
+                try {
+                    value = Integer.parseInt(scanner.nextLine());
+                    break;
+                } catch (NumberFormatException e) {
+                    System.out.println("Пожалуйста, введите целое число.");
+                }
+            }
             tst.put(key, value);
         }
 
@@ -37,6 +52,7 @@ public class Main {
 
         scanner.close();
     }
+
 }
 
 /*
