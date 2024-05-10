@@ -1,3 +1,5 @@
+package org.example;
+
 public class TST<Value> {
     Node root;
 

@@ -1,3 +1,5 @@
+package org.example;
+
 import java.util.HashSet;
 
 public class StringSET {
@@ -17,15 +19,6 @@ public class StringSET {
 
     public boolean contains(String key) {
         return set.contains(key);
-    }
-
-    public boolean containsPrefix(String prefix) {
-        for (String s : set) {
-            if (s.startsWith(prefix)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     public boolean isEmpty() {

@@ -1,3 +1,5 @@
+package org.example;
+
 import java.security.SecureRandom;
 
 public class MonkeyTyping {
