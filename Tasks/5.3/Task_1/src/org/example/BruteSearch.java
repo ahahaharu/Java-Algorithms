@@ -1,3 +1,5 @@
+package org.example;
+
 public class BruteSearch {
     private String pattern;
     private int patternLength;
