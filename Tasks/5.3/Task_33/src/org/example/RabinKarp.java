@@ -1,7 +1,7 @@
 package org.example;
 
 import java.math.BigInteger;
-import java.util.Random;
+import java.security.SecureRandom;
 
 public class RabinKarp {
     private String pat;
@@ -50,7 +50,7 @@ public class RabinKarp {
     }
 
     long longRandomPrime() {
-        BigInteger prime = BigInteger.probablePrime(31, new Random());
+        BigInteger prime = BigInteger.probablePrime(31, new SecureRandom());
         return prime.longValue();
     }
 }
