@@ -42,9 +42,7 @@ public class RabinKarp {
         for (int i = M; i < N; i++) {
             txtHash = (txtHash + Q - RM*txt.charAt(i-M) % Q) % Q;
             txtHash = (txtHash*R + txt.charAt(i)) % Q;
-            if (patHash == txtHash) {
-                if (check(i - M + 1)) return i - M + 1;
-            }
+            if (patHash == txtHash && check(i - M + 1)) return i - M + 1;
         }
         return N;
     }
