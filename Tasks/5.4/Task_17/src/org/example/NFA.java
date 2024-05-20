@@ -5,9 +5,9 @@ import org.example.data.*;
 import java.util.LinkedList;
 
 public class NFA {
-    private char[] re;
-    private Digraph G;
-    private int M;
+    private char[] re;// переходы соответствия
+    private Digraph G;// e-переходы
+    private int M;// колво состояний
 
     public NFA(String regexp) {
         Stack<Integer> ops = new Stack<>();
@@ -20,21 +20,18 @@ public class NFA {
             if (re[i] == '(' || re[i] == '|') {
                 ops.push(i);
             } else if (re[i] == ')') {
-                LinkedList<Integer> ors = new LinkedList<>();
-                while (!ops.isEmpty() && re[ops.top()]=='|') {
-                    int or = ops.pop();
-                    ors.add(or);
-                }
-                lp=ops.pop();
-                for(int or:ors){
+                int or = ops.pop();
+                if (re[or] == '|') {
+                    lp = ops.pop();
                     G.addEdge(lp, or + 1);
                     G.addEdge(or, i);
-                }
+                } else
+                    lp = or;
             }
             if (i < M - 1 && re[i + 1] == '*') {
                 G.addEdge(lp, i + 1);
                 G.addEdge(i + 1, lp);
-            }
+            } // заглядывание вперед
             if (re[i] == '(' || re[i] == '*' || re[i] == ')') {
                 G.addEdge(i, i + 1);
             }
