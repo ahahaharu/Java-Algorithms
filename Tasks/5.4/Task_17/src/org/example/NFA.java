@@ -2,8 +2,6 @@ package org.example;
 
 import org.example.data.*;
 
-import java.util.LinkedList;
-
 public class NFA {
     private char[] re;// переходы соответствия
     private Digraph G;// e-переходы
